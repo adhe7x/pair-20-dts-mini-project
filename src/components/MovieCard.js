@@ -15,7 +15,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 export default function MovieCard() {
 
     return (
-        <Card sx={{ maxWidth: 345, mt: 15 }}>
+        <Card sx={{ maxWidth: 345, mt: 15, mr: 5 }}>
           <CardActionArea>
             <CardMedia
               component="img"

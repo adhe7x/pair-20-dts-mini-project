@@ -10,31 +10,38 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 export default function MovieCard() {
 
-  return (
-    <Card sx={{ display: 'flex', mt: 15, width: 400 }}>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image="http://placekitten.com/500/500"
-        alt="Live from space album cover"
-      />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-            2012
-          </Typography>
-        </CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-        <Rating sx={{ mr: 1 }} name="read-only" value={4} readOnly />
-        <p>4</p>
-        </Box>
-      </Box>
-    </Card>
-  );
+    return (
+        <Card sx={{ maxWidth: 345, mt: 15 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="140"
+              image="http://placekitten.com/500/500"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography gutterBottom variant="p" component="div">
+                2012
+              </Typography>
+              <Rating name="read-only" value={4} readOnly />
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over 6,000
+                species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Detail
+            </Button>
+          </CardActions>
+        </Card>
+      );
 }

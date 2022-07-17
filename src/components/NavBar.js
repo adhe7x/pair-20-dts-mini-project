@@ -25,7 +25,7 @@ const Navbar = () => {
               letterSpacing: '.3rem',
             }}
           >
-            NONTON
+            Movie App
           </Typography>
           <Box sx={{ display: 'block' }}>
             {navItems.map((item) => (

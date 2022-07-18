@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import instance from "../instance";
 
 function Row({title, fetchUrl}){
     const [movies, setMovies] = useState([]);
@@ -9,7 +9,7 @@ function Row({title, fetchUrl}){
         //jika [], run sekali ketika ngeload row, dan tidak run lagi
 
         async function fetchData() {
-            const request = await axios.get(fetchUrl);
+            const request = await instance.get(fetchUrl);
             setMovies(request.data.results);
             return request;
         }

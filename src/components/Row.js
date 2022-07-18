@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
-import instance from "../instance";
+import React, { useEffect, useState } from 'react';
+import instance from '../instance';
+import "./Row.css";
 
-function Row({title, fetchUrl}){
+const base_url = "https://image.tmdb.org/t/p/original/";
+
+function Row({title, fetchUrl, isOriginal}){
     const [movies, setMovies] = useState([]);
     
     useEffect(() => {
@@ -17,12 +20,18 @@ function Row({title, fetchUrl}){
     }, [fetchUrl]);
 
     return(
-        <div>
+        <div className='row'>
             <h2>{title}</h2>
             
-            <div className="row_poster">
+            <div className='row__posters'>
+
                 {movies.map(movie =>(
-                    <img src={movie} alt={movie.name} />
+                    <img
+                        key={movie.id}
+                        className={`row__poster ${isOriginal && 'row__posterLarge'}`}
+                        src={`${base_url}${ isOriginal ? movie.poster_path : movie.backdrop_path}`}
+                        alt={movie.name}
+                    />
                 ))}
             </div>
                       

@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Banner />
       <Row title="Populars" fetchUrl={requests.fetchTrending}/>     
-      <Row title="Top 10 Indonesia Movies" fetchUrl={requests.fetchTopRated} />
+      <Row title="Top Rated Movies" fetchUrl={requests.fetchTopRated} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Originals" fetchUrl={requests.fetchOriginals} isOriginal />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />

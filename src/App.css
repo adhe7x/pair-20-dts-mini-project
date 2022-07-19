@@ -2,3 +2,7 @@
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.App {
+  background-color: rgb(10, 10, 10);
+}

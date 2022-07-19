@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "./assets/Logo.png";
-import avatar from "./assets/avatar.png";
+import logo from './assets/Logo.png';
+import avatar from './assets/avatar.png';
 
 function Navbar() {
 
@@ -13,9 +13,6 @@ function Navbar() {
                 handleShow(true);
             } else handleShow(false);
         });
-        return () => {
-            window.removeEventListener("scroll");
-        };
     }, []);
 
     return(

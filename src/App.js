@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Rows from './components/Rows';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Rows />}>
         </Route>
       </Routes>
-         
+      <Footer />     
     </div>
   );
 }

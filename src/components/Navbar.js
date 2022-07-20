@@ -1,36 +1,43 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import logo from './assets/Logo.png';
-import avatar from './assets/avatar.png';
+import { MovieFilter } from '@mui/icons-material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
 
-function Navbar() {
+const navItems = ['Home', 'Register', 'Sign In', 'Sign Out'];
 
-    const [show, handleShow] = useState(false);
-
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                handleShow(true);
-            } else handleShow(false);
-        });
-    }, []);
-
-    return(
-
-        <div className={`nav ${show && "nav__black"}`}>
-            <img 
-                className='nav__logo'
-                src={logo}
-                alt="Movie Logo"
-            />
-
-            <img 
-                className='nav__avatar'
-                src={avatar}
-                alt="Avatar"
-            />
-        </div>
-    )
+const Navbar = () => {
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <AppBar component="nav">
+        <Toolbar>
+          <MovieFilter sx={{ display: 'flex', mr: 1 }} />
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: 'block',
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+            }}
+          >
+            NONTON
+          </Typography>
+          <Box sx={{ display: 'block' }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ color: '#fff' }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
 }
 
 export default Navbar;

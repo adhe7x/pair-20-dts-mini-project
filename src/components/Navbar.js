@@ -1,19 +1,20 @@
-import { MovieFilter } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import Logo from './assets/Logo.png';
+import './Navbar.css';
 
 const navItems = ['Home', 'Register', 'Sign In', 'Sign Out'];
 
 const Navbar = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
+    <Box>
+      <AppBar sx={{bgcolor: 'black'}}>
         <Toolbar>
-          <MovieFilter sx={{ display: 'flex', mr: 1 }} />
+          <img className='nav__logo' src={Logo} alt="Logo"/>
           <Typography
             variant="h6"
             component="div"
@@ -25,11 +26,15 @@ const Navbar = () => {
               letterSpacing: '.3rem',
             }}
           >
-            NONTON
+            ovieApp
           </Typography>
           <Box sx={{ display: 'block' }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ 
+                color: 'white',
+                fontSize: '1rem',
+                fontWeight: 700,
+                fontFamily: 'monospace' }}>
                 {item}
               </Button>
             ))}

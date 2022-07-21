@@ -3,8 +3,6 @@ import './SignupScreen.css';
 
 function SignupScreen() {
 
-
-
     return (
         <div className="signupScreen">
             <form>

@@ -1,7 +1,7 @@
 import { initializeApp as firebase } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDTLkk_ZKzIiR0kV0QDzBUdiGvXght1oxw",
+  apiKey: "process.env.REACT_APP_FIREBASE_KEY",
   authDomain: "movie-app-mini.firebaseapp.com",
   projectId: "movie-app-mini",
   storageBucket: "movie-app-mini.appspot.com",

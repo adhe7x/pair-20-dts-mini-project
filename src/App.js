@@ -12,7 +12,7 @@ function App() {
       <Router>
           {!user ? (
           <LoginScreen />) : (
-              <Route exact path="/" element={<HomeScreen />}>
+              <Route path="/home" element={<HomeScreen />}>
               </Route>
           )}
       </Router>
